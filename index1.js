@@ -73,7 +73,7 @@ function checkanswer(j)
             }}
     else{
                 console.log("HI");
-                document.querySelector("h1").innerHTML="GAME OVER PRESS ANY KEY TO RESTART";
+                document.querySelector("h1").innerHTML="GAME OVER"+" YOU SCORED "+(level-1)+" PRESS ANY KEY TO RESTART";
                 var ad=new Audio("sounds/wrong.mp3");
                 ad.play();
                 $("body").css("backgroundColor","red");
