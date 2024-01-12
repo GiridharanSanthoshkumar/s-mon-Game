@@ -1,3 +1,4 @@
+ 
 var level;
 var gamepattern=[];
 var started=0;
@@ -10,7 +11,20 @@ $(document).keydown(function(){
        newsequence();
     }
     
-})
+});
+$(start).click(
+    function(){
+        if(started==0)
+        {
+        level=0;
+        started=1;
+        document.querySelector("#level-title1").innerHTML="LEVEL 0";
+        document.querySelector("#start").style.display="none";
+           newsequence();
+        }
+        
+    }
+)
 
 
 
@@ -24,6 +38,8 @@ function newsequence()
     level++;
    document.querySelector("h1").innerHTML="LEVEL "+level;
 
+document.querySelector("#level-title1").innerHTML="LEVEL "+level;
+   
 var rno= Math.floor(Math.random()*4);
    var nextcolor=colors[rno];
     document.querySelector("#"+nextcolor).style.backgroundColor="grey";
@@ -74,6 +90,8 @@ function checkanswer(j)
     else{
                 console.log("HI");
                 document.querySelector("h1").innerHTML="GAME OVER"+" YOU SCORED "+(level-1)+" PRESS ANY KEY TO RESTART";
+                document.querySelector("#level-title1").innerHTML="GAME OVER"+" YOU SCORED "+(level-1)+" PRESS START  BUTTON TO RESTART";
+                document.querySelector("#start").style.display="block";
                 var ad=new Audio("sounds/wrong.mp3");
                 ad.play();
                 $("body").css("backgroundColor","red");
