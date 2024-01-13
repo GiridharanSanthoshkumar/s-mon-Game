@@ -91,7 +91,8 @@ function checkanswer(j)
                 console.log("HI");
                 document.querySelector("h1").innerHTML="GAME OVER"+" YOU SCORED "+(level-1)+" PRESS ANY KEY TO RESTART";
                 document.querySelector("#level-title1").innerHTML="GAME OVER"+" YOU SCORED "+(level-1)+" PRESS START  BUTTON TO RESTART";
-                document.querySelector("#start").style.display="block";
+             if(screen.width<780)   
+                   document.querySelector("#start").style.display="block";
                 var ad=new Audio("sounds/wrong.mp3");
                 ad.play();
                 $("body").css("backgroundColor","red");
